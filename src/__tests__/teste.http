@@ -1,0 +1,14 @@
+###
+GET http://localhost:3000/ciclo/listar
+
+###
+GET http://localhost:3000/ciclo/listar/1/2/3
+
+###
+POST http://localhost:3000/ciclo/cadastrar
+Content-Type: application/json
+
+{
+    "titulo": "Valorant",
+    "genero": "FPS"
+}
