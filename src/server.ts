@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import { router } from "./config/routes";
 import { mongoose } from "./config/database";
 const app = express();
-const db = mongoose;
+const database = mongoose;
 
 console.clear();
 

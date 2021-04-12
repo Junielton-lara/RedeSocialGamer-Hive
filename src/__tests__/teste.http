@@ -1,14 +1,17 @@
 ###
-GET http://localhost:3000/ciclo/listar
+GET http://localhost:3000/publicacoes/listar
+
 
 ###
-GET http://localhost:3000/ciclo/listar/1/2/3
-
-###
-POST http://localhost:3000/ciclo/cadastrar
+POST http://localhost:3000/publicacoes/postar
 Content-Type: application/json
 
 {
-    "titulo": "Valorant",
-    "genero": "FPS"
+    "imagem": "https://static1-br.millenium.gg/articles/9/42/09/@/86042-fallen-probleminha-article_m-1.png",
+    "corpo": "Primeira pública de teste, com imagem do grandíssimo professor com probleminha",
+    "autor":[{
+        "nome": "Kassiel Sehnem",
+        "email": "kassielsehnem@gmail.com",
+        "senha": "teste1234"
+    }]
 }

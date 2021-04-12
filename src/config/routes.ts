@@ -1,13 +1,13 @@
 import { Router, Request, Response } from "express";
-import { CicloController } from "../controllers/CicloController"
+import { PublicacaoController } from "../controllers/PublicacaoController"
 
 const router = Router();
-const cicloController = new CicloController();
+const publicacaoController = new PublicacaoController();
 
 //Funcionalidades
 //Métodos/Verbos HTTP -> POST e GET ...
-router.get("/ciclo/listar", cicloController.listar);
-router.get("/ciclo/listar/:param1/:param2/:param3", cicloController.buscarPorId);
-router.post("/ciclo/cadastrar", cicloController.cadastrar);
+router.post("/publicacoes/postar", publicacaoController.postar);
+router.get("/publicacoes/listar", publicacaoController.listar);
+router.post("/");
 
 export { router };
