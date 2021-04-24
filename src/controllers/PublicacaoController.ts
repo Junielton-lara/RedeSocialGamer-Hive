@@ -10,9 +10,10 @@ class PublicacaoController {
   }
 
 
-  listar(request: Request, response: Response) {
-    response.json(PublicacaoSchema.find());
+  async listar(request: Request, response: Response) {
+    response.json(await PublicacaoSchema.find());
   }
+
 
 }
 

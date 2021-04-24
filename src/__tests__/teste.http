@@ -9,9 +9,6 @@ Content-Type: application/json
 {
     "imagem": "https://static1-br.millenium.gg/articles/9/42/09/@/86042-fallen-probleminha-article_m-1.png",
     "corpo": "Primeira pública de teste, com imagem do grandíssimo professor com probleminha",
-    "autor":[{
-        "nome": "Kassiel Sehnem",
-        "email": "kassielsehnem@gmail.com",
-        "senha": "teste1234"
-    }]
+    "autor": ,//colocar id do usuario
+    "categoria": //colocar id da categoria
 }
