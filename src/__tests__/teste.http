@@ -1,17 +1,91 @@
 ###
-GET http://localhost:3000/publicacoes/listar
+GET http://localhost:3000/608c7ce64c9d6042fc29b862
+//Homepage usando ID do usuário
 
+###
+GET http://localhost:3000/publicacoes/listar
+//Listar Publicações
+
+###
+GET http://localhost:3000/publicacoes/listar/autor/608c6d66d55ace27f4cb952f
+//Listar Publicações por Autor
+
+###
+GET http://localhost:3000/publicacoes/listar/categoria/608c66c61643dd31a481f005
+//Listar Publicações por Categoria
 
 ###
 POST http://localhost:3000/publicacoes/postar
 Content-Type: application/json
 
 {
-    "imagem": "https://static1-br.millenium.gg/articles/9/42/09/@/86042-fallen-probleminha-article_m-1.png",
-    "corpo": "Primeira pública de teste, com imagem do grandíssimo professor com probleminha",
-    "autor":[{
-        "nome": "Kassiel Sehnem",
-        "email": "kassielsehnem@gmail.com",
-        "senha": "teste1234"
-    }]
+    "imagem": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/184965195/original/7dc07caf7a3a1507b545a41d329d07c12f257fd7/increase-your-rank-in-rocket-league.png",
+    "corpo": "Finalmente consegui pegar o rank Supersonic Legend, to muito feliz!!!!",
+    "autor": "608c7ce64c9d6042fc29b862",
+    "categoria": "608c6d66d55ace27f4cb952f"
 }
+//Criar publicação com link de imagem, corpo em texto, ID do autor e ID da categoria
+
+###
+DELETE http://localhost:3000/publicacoes/remover/608c6ea9d55ace27f4cb9530
+//Remover Publicação usando o ID
+
+###
+GET http://localhost:3000/usuarios/listar
+//Listar Usuários
+
+###
+POST http://localhost:3000/usuarios/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Fellipe Pinto",
+    "email": "pedepato654@gmail.com",
+    "senha": "teste654"
+}
+//Cadastrar Usuários
+
+###
+PUT http://localhost:3000/usuarios/categorias/adicionar
+Content-Type: application/json
+
+{
+    "nome": "Kassiel Sehnem",
+    "categoriasSeguidas": "608c6d66d55ace27f4cb952f"
+}
+//Adicionar Categorias seguidas ao usuário pelo nome do usuário e ID da categoria
+
+###
+DELETE http://localhost:3000/usuarios/remover/608c642692ff521c4447540a
+//Remover usuário por ID
+
+###
+POST http://localhost:3000/categorias/criar
+Content-Type: application/json
+
+{
+    "nome": "Rocket League",
+    "genero1": "jogo de corrida",
+    "genero2": ""
+}
+//Criar categoria 
+
+###
+GET http://localhost:3000/categorias/listar
+//Listar Categorias
+
+###
+DELETE http://localhost:3000/categorias/remover/608c8a67c2026e1184bcf8ce
+//Remover categoria por ID
+
+###
+PUT http://localhost:3000/categorias/editar
+Content-Type: application/json
+
+{
+    "_id": "608c8a67c2026e1184bcf8ce",
+    "nome": "Rocket League",
+    "genero1": "jogo de corrida",
+    "genero2": ""
+}
+//Editar Categoria usando o ID para buscar e as informações seguintes para editar

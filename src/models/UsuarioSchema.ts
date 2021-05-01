@@ -1,20 +1,26 @@
 import { model, Schema} from "mongoose";
+import PublicacaoSchema from "../models/PublicacaoSchema";
+import CategoriaSchema from "../models/CategoriaSchema";
 
 const UsuarioSchema = new Schema(
   {
-    nome:{
+    nome:{ //Nome do usuário
       type: String,
-      required: [true, "O campo nickname é obrigatório!"]
+      required: [true, "O campo nome é obrigatório!"]
     },
-    email:{
+    email:{ //E-mail do usuário
       type: String,
       required: [true, "O campo email é obrigatório!"]
     },
-    senha:{
+    senha:{ //Senha do usuário
       type: String,
       required: [true, "O campo senha é obrigatório!"]
-    }
+    },
+    categoriasSeguidas: [{ //Categorias que o usuário segue
+      type: Schema.Types.ObjectId,
+      ref: 'categorias'
+    }]
   }
 );
 
-export {UsuarioSchema};
+export default model("usuarios", UsuarioSchema);

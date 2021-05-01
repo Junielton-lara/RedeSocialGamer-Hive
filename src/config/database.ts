@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 mongoose
   .connect(
-    "mongodb+srv://sa:sa@43690@hive.jbcgc.mongodb.net/hive?retryWrites=true&w=majority",
+    "mongodb+srv://hive:hiveadm@hive.jw4rd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
