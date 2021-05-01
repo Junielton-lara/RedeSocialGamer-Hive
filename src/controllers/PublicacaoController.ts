@@ -105,7 +105,6 @@ class PublicacaoController {
   }
 
 
-<<<<<<< HEAD
   //Homepage do usuário
   async homepage(request: Request, response: Response){
     try {
@@ -125,10 +124,6 @@ class PublicacaoController {
         msg: "Não foi possível mostrar a homepage do usuário atual!"
       });
     }
-=======
-  async listar(request: Request, response: Response) {
-    response.json(await PublicacaoSchema.find());
->>>>>>> b18e1185a246b2f64a8bd598e0c16f7c1da9ba20
   }
 
 

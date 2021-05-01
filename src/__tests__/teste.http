@@ -19,7 +19,6 @@ POST http://localhost:3000/publicacoes/postar
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
     "imagem": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/184965195/original/7dc07caf7a3a1507b545a41d329d07c12f257fd7/increase-your-rank-in-rocket-league.png",
     "corpo": "Finalmente consegui pegar o rank Supersonic Legend, to muito feliz!!!!",
     "autor": "608c7ce64c9d6042fc29b862",
@@ -90,10 +89,3 @@ Content-Type: application/json
     "genero2": ""
 }
 //Editar Categoria usando o ID para buscar e as informações seguintes para editar
-=======
-    "imagem": "https://static1-br.millenium.gg/articles/9/42/09/@/86042-fallen-probleminha-article_m-1.png",
-    "corpo": "Primeira pública de teste, com imagem do grandíssimo professor com probleminha",
-    "autor": ,//colocar id do usuario
-    "categoria": //colocar id da categoria
-}
->>>>>>> b18e1185a246b2f64a8bd598e0c16f7c1da9ba20

@@ -16,13 +16,6 @@ const UsuarioSchema = new Schema(
       type: String,
       required: [true, "O campo senha é obrigatório!"]
     },
-<<<<<<< HEAD
-=======
-    publicacoes: [{ //Publicações do usuário
-      type: Schema.Types.ObjectId,
-      ref: 'publicacoes'
-    }],
->>>>>>> b18e1185a246b2f64a8bd598e0c16f7c1da9ba20
     categoriasSeguidas: [{ //Categorias que o usuário segue
       type: Schema.Types.ObjectId,
       ref: 'categorias'
