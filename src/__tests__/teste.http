@@ -1,5 +1,5 @@
 ###
-GET http://localhost:3000/608c7ce64c9d6042fc29b862
+GET http://localhost:3000/608c6d66d55ace27f4cb952f
 //Homepage usando ID do usuário
 
 ###
@@ -19,10 +19,10 @@ POST http://localhost:3000/publicacoes/postar
 Content-Type: application/json
 
 {
-    "imagem": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/184965195/original/7dc07caf7a3a1507b545a41d329d07c12f257fd7/increase-your-rank-in-rocket-league.png",
-    "corpo": "Finalmente consegui pegar o rank Supersonic Legend, to muito feliz!!!!",
+    "imagem": "",
+    "corpo": "Peguei global no CS",
     "autor": "608c7ce64c9d6042fc29b862",
-    "categoria": "608c6d66d55ace27f4cb952f"
+    "categoria": "608c66c61643dd31a481f005"
 }
 //Criar publicação com link de imagem, corpo em texto, ID do autor e ID da categoria
 

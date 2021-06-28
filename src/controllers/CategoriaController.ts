@@ -7,11 +7,7 @@ class CategoriaController{
     async criar(request: Request, response: Response){
         try {
             const novaCategoria = await CategoriaSchema.create(request.body);
-            response.status(201).json({
-                data: novaCategoria,
-                error: false,
-                msg: "Categoria criada com sucesso!"
-            });
+            response.status(201).json(novaCategoria);
         } catch (error) {
             response.status(400).json({
                 data: error,
@@ -25,11 +21,7 @@ class CategoriaController{
     async listar(request: Request, response: Response){
         try {
             const categorias = await CategoriaSchema.find();
-            response.status(200).json({
-                data: categorias,
-                error: false,
-                msg: "Mostrando a lista de categorias atualizada!"
-            })
+            response.status(200).json(categorias)
         } catch (error) {
             response.status(400).json({
                 data: error,
@@ -44,11 +36,7 @@ class CategoriaController{
         try {
             const { id } = request.params;
             const categoria = await CategoriaSchema.findOneAndDelete({ _id: id });
-            response.status(200).json({
-                data: categoria,
-                error: false,
-                msg: "Categoria removida com sucesso!"
-            });
+            response.status(200).json(categoria);
         } catch (error) {
             response.status(400).json({
                 data: error,
@@ -64,12 +52,8 @@ class CategoriaController{
             const nome = request.body.nome;
             const genero1 = request.body.genero1
             const genero2 = request.body.genero2
-            const categoria = await CategoriaSchema.findOneAndUpdate({ _id: request.body._id }, { _id: "608c6d66d55ace27f4cb952f", nome: nome, genero1: genero1, genero2: genero2 });
-            response.status(200).json({
-                data: categoria,
-                error: false,
-                msg: "Categoria atualizada com sucesso!"
-            })
+            const categoria = await CategoriaSchema.findOneAndUpdate({ _id: request.body._id }, { nome: nome, genero1: genero1, genero2: genero2 });
+            response.status(200).json(categoria)
         } catch (error) {
             response.status(400).json({
                 data: error,

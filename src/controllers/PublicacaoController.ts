@@ -9,11 +9,7 @@ class PublicacaoController {
     try {
       const publi = request.body;
       const publicacaoCadastrado = await PublicacaoSchema.create(publi);
-      response.status(201).json({
-        data: publicacaoCadastrado,
-        error: false,
-        msg: "Publicação postada com sucesso!"
-      });
+      response.status(201).json(publicacaoCadastrado);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -28,11 +24,7 @@ class PublicacaoController {
   async listar(request: Request, response: Response) {
     try {
       const publi = await PublicacaoSchema.find().populate('autor', 'nome').populate('categoria', 'nome');
-      response.status(200).json({
-        data: publi,
-        error: false,
-        msg: "Mostrando lista de publicações atualizada!"
-      });
+      response.status(200).json(publi);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -49,11 +41,7 @@ class PublicacaoController {
     try {
       const {id} = request.params;
       const publi = await PublicacaoSchema.find({ autor: id  }).populate('autor', 'nome').populate('categoria', 'nome');
-      response.status(200).json({
-        data: publi,
-        error: false,
-        msg: "Mostrando todas as publicações do autor solicitado!"
-      });
+      response.status(200).json(publi);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -69,11 +57,7 @@ class PublicacaoController {
     try {
       const { id } = request.params;
       const publi = await PublicacaoSchema.find({ categoria: id }).populate('autor', 'nome').populate('categoria', 'nome');
-      response.status(200).json({
-        data: publi,
-        error: false,
-        msg: "Mostrando todas as publicações da categoria solicitada!"
-      });
+      response.status(200).json(publi);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -89,11 +73,7 @@ class PublicacaoController {
     try {
       const { id } = request.params;
       const publi = await PublicacaoSchema.findOneAndDelete({ _id: id });
-      response.status(200).json({
-        data: publi,
-        error: false,
-        msg: "Publicação deletada com sucesso!"
-      });
+      response.status(200).json(publi);
     } catch (error) {
       response.json({
         data: error,
@@ -112,11 +92,7 @@ class PublicacaoController {
       const categorias = await PublicacaoSchema.findOne({ autor: id }, {autor: 1, _id: 0}).populate('autor', 'categoriasSeguidas');
       const cat = categorias.autor.categoriasSeguidas;
       const publi = await PublicacaoSchema.find({ categoria: cat }, {_id:0}).populate('autor', 'nome').populate('categoria', 'nome');
-      response.status(200).json({
-        data: publi,
-        error: false,
-        msg: "Mostrando a homepage do usuário atual!"
-      });
+      response.status(200).json(publi);
     } catch (error) {
       response.status(400).json({
         data: error,

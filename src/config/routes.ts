@@ -2,11 +2,13 @@ import { Router } from "express";
 import { PublicacaoController } from "../controllers/PublicacaoController";
 import { UsuarioController } from "../controllers/UsuarioController";
 import { CategoriaController } from "../controllers/CategoriaController";
+import { LoginController } from "../controllers/LoginController";
 
 const router = Router();
 const publicacaoController = new PublicacaoController();
 const usuarioController = new UsuarioController();
 const categoriaController = new CategoriaController();
+const loginController = new LoginController();
 
 
 //Funcionalidades
@@ -25,6 +27,6 @@ router.post("/categorias/criar", categoriaController.criar); //Criação de cate
 router.get("/categorias/listar", categoriaController.listar); //Listagem de categorias
 router.put("/categorias/editar", categoriaController.editar); //Edição de categorias
 router.delete("/categorias/remover/:id", categoriaController.remover); //Remoção de categorias
-
+router.post("/login", loginController.verificar);//Verificar o login
 
 export { router };

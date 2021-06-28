@@ -1,6 +1,4 @@
 import { model, Schema} from "mongoose";
-import PublicacaoSchema from "../models/PublicacaoSchema";
-import CategoriaSchema from "../models/CategoriaSchema";
 
 const UsuarioSchema = new Schema(
   {
