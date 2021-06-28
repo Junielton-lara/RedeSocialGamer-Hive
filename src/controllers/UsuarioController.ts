@@ -62,6 +62,25 @@ class UsuarioController{
         }
     }
 
+    async categoriasSeguidas(request: Request, response: Response){
+        try{
+            const { id } = request.params;
+            const usuario = await UsuarioSchema.findOne({ _id: id }).populate('categoriasSeguidas', '_id');
+            if(usuario != null){
+            const categorias = usuario.categoriasSeguidas;
+            response.status(200).json(categorias);
+            }else{
+                response.status(404).json({msg: "Erro!"})
+            }
+        }catch(error){
+            response.status(400).json({
+                data: error,
+                error: true,
+                msg: "Não foi possível encontrar as categorias seguidas!"
+            })
+        }
+    }
+
 
 }
 

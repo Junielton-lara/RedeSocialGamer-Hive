@@ -63,6 +63,23 @@ class CategoriaController{
         }
     }
 
+    async listarPorId(request: Request, response: Response){
+        try {
+            const { id } = request.params;
+            const categoria = await CategoriaSchema.findOne({ _id : id});
+            if(categoria != null ){
+                response.status(200).json(categoria);
+            }else{
+                response.status(404).json({msg: "Erro!"});
+            }
+        } catch (error) {
+            response.status(400).json({
+                data: error,
+                error: true,
+                msg: "Erro!"
+            })
+        }
+    }
 
 }
 

@@ -28,5 +28,7 @@ router.get("/categorias/listar", categoriaController.listar); //Listagem de cate
 router.put("/categorias/editar", categoriaController.editar); //Edição de categorias
 router.delete("/categorias/remover/:id", categoriaController.remover); //Remoção de categorias
 router.post("/login", loginController.verificar);//Verificar o login
+router.get("/usuarios/categorias/:id", usuarioController.categoriasSeguidas);
+router.get("/categorias/usuario/listar/:id", categoriaController.listarPorId);
 
 export { router };
